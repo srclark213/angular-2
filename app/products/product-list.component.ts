@@ -12,7 +12,8 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    listFilter: string = 'cart';
+    listFilter: string;
+    
     products: IProduct[] = [
     {
         "productId": 1,
@@ -51,5 +52,9 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void {
         console.log('In OnInit');
+    }
+
+    onEvent(message: string): void {
+        this.pageTitle = message;
     }
 }

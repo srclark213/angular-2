@@ -15,7 +15,6 @@ var ProductListComponent = (function () {
         this.imageWidth = 50;
         this.imageMargin = 2;
         this.showImage = false;
-        this.listFilter = 'cart';
         this.products = [
             {
                 "productId": 1,
@@ -53,6 +52,9 @@ var ProductListComponent = (function () {
     };
     ProductListComponent.prototype.ngOnInit = function () {
         console.log('In OnInit');
+    };
+    ProductListComponent.prototype.onEvent = function (message) {
+        this.pageTitle = message;
     };
     ProductListComponent = __decorate([
         core_1.Component({

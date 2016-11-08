@@ -18,20 +18,19 @@ var ProductListComponent = (function () {
         this.imageMargin = 2;
         this.showImage = false;
     }
-    ProductListComponent.prototype.toggleImage = function () {
-        this.showImage = !this.showImage;
-    };
     ProductListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._productService.getProducts()
             .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
+    };
+    ProductListComponent.prototype.toggleImage = function () {
+        this.showImage = !this.showImage;
     };
     ProductListComponent.prototype.onEvent = function (message) {
         this.pageTitle = message;
     };
     ProductListComponent = __decorate([
         core_1.Component({
-            selector: 'pm-products',
             moduleId: module.id,
             templateUrl: 'product-list.component.html',
             styleUrls: ['product-list.component.css']

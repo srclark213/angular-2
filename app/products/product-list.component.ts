@@ -3,7 +3,6 @@ import { IProduct } from './product';
 import { ProductService } from './product.service';
 
 @Component({
-    selector: 'pm-products',
     moduleId: module.id,
     templateUrl: 'product-list.component.html',
     styleUrls: ['product-list.component.css']
@@ -19,14 +18,14 @@ export class ProductListComponent implements OnInit {
 
     constructor(private _productService: ProductService) { }
 
-    toggleImage(): void {
-        this.showImage = !this.showImage;
-    }
-
     ngOnInit(): void {
         this._productService.getProducts()
             .subscribe(products => this.products = products, 
                        error => this.errorMessage = <any>error);
+    }
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
     }
 
     onEvent(message: string): void {

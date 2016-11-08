@@ -14,7 +14,7 @@ var StarComponent = (function () {
         this.notify = new core_1.EventEmitter();
     }
     StarComponent.prototype.ngOnChanges = function () {
-        this.starWidth = this.rating * 86 / 5;
+        this.starWidth = this.rating * 90 / 5;
     };
     StarComponent.prototype.onClick = function () {
         this.notify.emit("The rating " + this.rating + " was clicked!");

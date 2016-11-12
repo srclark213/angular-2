@@ -18,8 +18,7 @@ import { ProductService } from './products/product.service';
     <div class='container'>
         <router-outlet></router-outlet>
     </div>
-    `,
-    providers: [ProductService]
+    `
 })
 export class AppComponent {
     pageTitle: string = 'Product Management';
